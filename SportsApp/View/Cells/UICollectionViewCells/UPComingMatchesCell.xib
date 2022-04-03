@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UPComingMatchesCell" id="gTV-IL-0wX" customClass="UPComingMatchesCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="625" height="346"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="625" height="346"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swX-Cy-RYn">
+                        <rect key="frame" x="0.0" y="0.0" width="625" height="346"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afi-eW-6JL">
+                                <rect key="frame" x="0.0" y="0.0" width="625" height="346"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yAP-84-m1E">
+                                    <rect key="frame" x="0.0" y="0.0" width="625" height="346"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="Zw1-Ov-TfA">
+                                            <rect key="frame" x="0.0" y="0.0" width="625" height="277"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming match Is arsenal vs liverpool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wX5-HH-4MJ">
+                                            <rect key="frame" x="5" y="282" width="615" height="59"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBn-2y-1iL">
+                                            <rect key="frame" x="10" y="5" width="605" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcx-sx-oJy">
+                                            <rect key="frame" x="5" y="27.5" width="615" height="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQE-VZ-kIs">
+                                            <rect key="frame" x="5" y="259" width="615" height="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mcx-sx-oJy" firstAttribute="centerX" secondItem="EBn-2y-1iL" secondAttribute="centerX" id="6wg-Uc-q9K"/>
+                                        <constraint firstAttribute="trailing" secondItem="wX5-HH-4MJ" secondAttribute="trailing" constant="5" id="82F-5S-65y"/>
+                                        <constraint firstItem="wX5-HH-4MJ" firstAttribute="top" secondItem="Zw1-Ov-TfA" secondAttribute="bottom" constant="5" id="Af8-II-lFr"/>
+                                        <constraint firstItem="Mcx-sx-oJy" firstAttribute="top" secondItem="EBn-2y-1iL" secondAttribute="bottom" constant="3" id="ELz-uR-GMd"/>
+                                        <constraint firstItem="wX5-HH-4MJ" firstAttribute="leading" secondItem="yAP-84-m1E" secondAttribute="leading" constant="5" id="IjV-ji-PFg"/>
+                                        <constraint firstAttribute="bottom" secondItem="wX5-HH-4MJ" secondAttribute="bottom" constant="5" id="O22-4d-buc"/>
+                                        <constraint firstItem="EBn-2y-1iL" firstAttribute="top" secondItem="yAP-84-m1E" secondAttribute="top" constant="5" id="OcK-NV-utq"/>
+                                        <constraint firstItem="Zw1-Ov-TfA" firstAttribute="height" secondItem="yAP-84-m1E" secondAttribute="height" multiplier="0.8" id="Swl-f6-F8e"/>
+                                        <constraint firstItem="wX5-HH-4MJ" firstAttribute="top" secondItem="aQE-VZ-kIs" secondAttribute="bottom" constant="5" id="YbV-IF-XF5"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zw1-Ov-TfA" secondAttribute="trailing" id="e8H-cN-O8e"/>
+                                        <constraint firstItem="aQE-VZ-kIs" firstAttribute="leading" secondItem="yAP-84-m1E" secondAttribute="leading" constant="5" id="fSb-qA-CFl"/>
+                                        <constraint firstAttribute="trailing" secondItem="EBn-2y-1iL" secondAttribute="trailing" constant="10" id="gYC-0t-czq"/>
+                                        <constraint firstItem="Zw1-Ov-TfA" firstAttribute="leading" secondItem="yAP-84-m1E" secondAttribute="leading" id="hEf-Pd-hxU"/>
+                                        <constraint firstItem="Mcx-sx-oJy" firstAttribute="leading" secondItem="yAP-84-m1E" secondAttribute="leading" constant="5" id="jkK-xw-E8W"/>
+                                        <constraint firstItem="Zw1-Ov-TfA" firstAttribute="top" secondItem="yAP-84-m1E" secondAttribute="top" id="joO-ET-KV4"/>
+                                        <constraint firstAttribute="trailing" secondItem="aQE-VZ-kIs" secondAttribute="trailing" constant="5" id="kc1-GV-pMA"/>
+                                        <constraint firstItem="EBn-2y-1iL" firstAttribute="centerX" secondItem="yAP-84-m1E" secondAttribute="centerX" id="lZJ-il-djE"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mcx-sx-oJy" secondAttribute="trailing" constant="5" id="n4Q-04-Ra3"/>
+                                        <constraint firstItem="EBn-2y-1iL" firstAttribute="leading" secondItem="yAP-84-m1E" secondAttribute="leading" constant="10" id="oqv-BK-bXA"/>
+                                        <constraint firstItem="aQE-VZ-kIs" firstAttribute="centerX" secondItem="Mcx-sx-oJy" secondAttribute="centerX" id="sgk-RY-kTe"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="afi-eW-6JL" firstAttribute="top" secondItem="swX-Cy-RYn" secondAttribute="top" id="7jf-fB-knH"/>
+                            <constraint firstItem="afi-eW-6JL" firstAttribute="leading" secondItem="swX-Cy-RYn" secondAttribute="leading" id="FOV-xi-NV3"/>
+                            <constraint firstAttribute="bottom" secondItem="afi-eW-6JL" secondAttribute="bottom" id="W6F-E8-buq"/>
+                            <constraint firstAttribute="trailing" secondItem="afi-eW-6JL" secondAttribute="trailing" id="kvH-yj-ySa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="swX-Cy-RYn" secondAttribute="bottom" id="OcQ-Ba-z2K"/>
+                <constraint firstAttribute="trailing" secondItem="swX-Cy-RYn" secondAttribute="trailing" id="RMy-Vl-RQ0"/>
+                <constraint firstItem="swX-Cy-RYn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a4I-gP-Kvt"/>
+                <constraint firstItem="swX-Cy-RYn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="btH-Q3-eks"/>
+            </constraints>
+            <size key="customSize" width="625" height="346"/>
+            <connections>
+                <outlet property="eventDatelabel" destination="Mcx-sx-oJy" id="X3J-dC-RZI"/>
+                <outlet property="eventTimeLabel" destination="aQE-VZ-kIs" id="91S-IL-qKL"/>
+                <outlet property="teamsLabel" destination="EBn-2y-1iL" id="6FG-sK-CKq"/>
+                <outlet property="upcomingMatchDetailLabel" destination="wX5-HH-4MJ" id="rhU-9f-qG7"/>
+                <outlet property="upcomingMatchImageView" destination="Zw1-Ov-TfA" id="Ck9-hi-Ye2"/>
+                <outlet property="visualView" destination="afi-eW-6JL" id="qpP-bm-SY9"/>
+            </connections>
+            <point key="canvasLocation" x="274.63768115942031" y="75"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="youtube" width="300" height="168"/>
+    </resources>
+</document>

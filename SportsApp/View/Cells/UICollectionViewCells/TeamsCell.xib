@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamsCell" id="gTV-IL-0wX" customClass="TeamsCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="495" height="198"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="495" height="198"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVx-c6-P6V">
+                        <rect key="frame" x="0.0" y="0.0" width="495" height="198"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Swi-JV-9bs">
+                            <rect key="frame" x="0.0" y="0.0" width="495" height="198"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q02-jk-aoH">
+                                    <rect key="frame" x="5" y="5" width="485" height="138.5"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJo-Pd-QN8">
+                                    <rect key="frame" x="5" y="153.5" width="485" height="21"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="q02-jk-aoH" firstAttribute="leading" secondItem="Swi-JV-9bs" secondAttribute="leading" constant="5" id="FG1-vU-rXL"/>
+                                <constraint firstItem="q02-jk-aoH" firstAttribute="top" secondItem="Swi-JV-9bs" secondAttribute="top" constant="5" id="IxC-fO-pay"/>
+                                <constraint firstAttribute="trailing" secondItem="q02-jk-aoH" secondAttribute="trailing" constant="5" id="K7o-G9-hCV"/>
+                                <constraint firstItem="XJo-Pd-QN8" firstAttribute="trailing" secondItem="q02-jk-aoH" secondAttribute="trailing" id="ZfZ-5a-bdD"/>
+                                <constraint firstItem="q02-jk-aoH" firstAttribute="height" secondItem="Swi-JV-9bs" secondAttribute="height" multiplier="0.7" id="aEd-6H-Mk0"/>
+                                <constraint firstItem="XJo-Pd-QN8" firstAttribute="top" secondItem="q02-jk-aoH" secondAttribute="bottom" constant="10" id="f9H-JL-taS"/>
+                                <constraint firstItem="XJo-Pd-QN8" firstAttribute="leading" secondItem="q02-jk-aoH" secondAttribute="leading" id="kLp-t5-Dck"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="systemUltraThinMaterial"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </visualEffectView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="pVx-c6-P6V" secondAttribute="bottom" id="RIJ-vN-3tE"/>
+                <constraint firstItem="pVx-c6-P6V" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gOB-AL-y6o"/>
+                <constraint firstItem="pVx-c6-P6V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hdG-2d-Kbc"/>
+                <constraint firstAttribute="trailing" secondItem="pVx-c6-P6V" secondAttribute="trailing" id="rm0-80-a05"/>
+            </constraints>
+            <size key="customSize" width="495" height="198"/>
+            <connections>
+                <outlet property="teamImageview" destination="q02-jk-aoH" id="d0X-XF-ZMh"/>
+                <outlet property="teamNameLabel" destination="XJo-Pd-QN8" id="xu6-e8-5EB"/>
+            </connections>
+            <point key="canvasLocation" x="203.62318840579712" y="94.419642857142847"/>
+        </collectionViewCell>
+    </objects>
+</document>

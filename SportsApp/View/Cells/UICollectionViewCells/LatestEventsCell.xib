@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LatestEventsCell" id="gTV-IL-0wX" customClass="LatestEventsCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="785" height="428"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="785" height="428"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3x-dK-nRi">
+                        <rect key="frame" x="0.0" y="0.0" width="785" height="428"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHE-aD-I0e">
+                                <rect key="frame" x="0.0" y="0.0" width="785" height="428"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Kd-sG-p11">
+                                    <rect key="frame" x="0.0" y="0.0" width="785" height="428"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="mgG-wR-jxR">
+                                            <rect key="frame" x="0.0" y="0.0" width="785" height="342.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqs-jG-5HG">
+                                            <rect key="frame" x="364.5" y="10" width="56" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uch-dQ-vzh">
+                                            <rect key="frame" x="5" y="347.5" width="775" height="75.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bqs-jG-5HG" firstAttribute="centerX" secondItem="7Kd-sG-p11" secondAttribute="centerX" id="5pM-hC-jKD"/>
+                                        <constraint firstItem="mgG-wR-jxR" firstAttribute="leading" secondItem="7Kd-sG-p11" secondAttribute="leading" id="6Ay-YR-Pf7"/>
+                                        <constraint firstItem="uch-dQ-vzh" firstAttribute="top" secondItem="mgG-wR-jxR" secondAttribute="bottom" constant="5" id="CRa-Gi-MKB"/>
+                                        <constraint firstItem="mgG-wR-jxR" firstAttribute="top" secondItem="7Kd-sG-p11" secondAttribute="top" id="EcZ-3d-dbT"/>
+                                        <constraint firstAttribute="trailing" secondItem="mgG-wR-jxR" secondAttribute="trailing" id="Lvl-PY-SK2"/>
+                                        <constraint firstAttribute="trailing" secondItem="uch-dQ-vzh" secondAttribute="trailing" constant="5" id="PRx-l0-AO3"/>
+                                        <constraint firstAttribute="bottom" secondItem="uch-dQ-vzh" secondAttribute="bottom" constant="5" id="Zoi-bf-Xef"/>
+                                        <constraint firstItem="bqs-jG-5HG" firstAttribute="top" secondItem="7Kd-sG-p11" secondAttribute="top" constant="10" id="fV7-9l-d5H"/>
+                                        <constraint firstItem="mgG-wR-jxR" firstAttribute="height" secondItem="7Kd-sG-p11" secondAttribute="height" multiplier="0.8" id="oim-wz-y2T"/>
+                                        <constraint firstItem="uch-dQ-vzh" firstAttribute="leading" secondItem="7Kd-sG-p11" secondAttribute="leading" constant="5" id="qnE-vf-kjN"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eHE-aD-I0e" firstAttribute="top" secondItem="C3x-dK-nRi" secondAttribute="top" id="8fT-eU-szc"/>
+                            <constraint firstAttribute="bottom" secondItem="eHE-aD-I0e" secondAttribute="bottom" id="A2F-cX-BYX"/>
+                            <constraint firstAttribute="trailing" secondItem="eHE-aD-I0e" secondAttribute="trailing" id="lLS-pI-ImD"/>
+                            <constraint firstItem="eHE-aD-I0e" firstAttribute="leading" secondItem="C3x-dK-nRi" secondAttribute="leading" id="sal-eS-D9R"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="C3x-dK-nRi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4Fo-sB-uzv"/>
+                <constraint firstAttribute="trailing" secondItem="C3x-dK-nRi" secondAttribute="trailing" id="A7X-Ys-XiN"/>
+                <constraint firstAttribute="bottom" secondItem="C3x-dK-nRi" secondAttribute="bottom" id="QiU-RE-TaH"/>
+                <constraint firstItem="C3x-dK-nRi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tit-9s-3WW"/>
+            </constraints>
+            <size key="customSize" width="785" height="428"/>
+            <connections>
+                <outlet property="latestEventImageView" destination="mgG-wR-jxR" id="jKy-rO-wel"/>
+                <outlet property="latestEventResultLabel" destination="bqs-jG-5HG" id="VQi-NW-vaB"/>
+                <outlet property="teamsLabel" destination="uch-dQ-vzh" id="pbq-VD-HMH"/>
+                <outlet property="visualView" destination="eHE-aD-I0e" id="WR5-n0-cHG"/>
+            </connections>
+            <point key="canvasLocation" x="673.1884057971015" y="41.517857142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="youtube" width="300" height="168"/>
+    </resources>
+</document>
