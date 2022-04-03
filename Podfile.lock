@@ -1,0 +1,24 @@
+PODS:
+  - Kingfisher (6.3.1)
+  - lottie-ios (3.3.0)
+  - ProgressHUD (2.70)
+
+DEPENDENCIES:
+  - Kingfisher (~> 6.3.1)
+  - lottie-ios
+  - ProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - lottie-ios
+    - ProgressHUD
+
+SPEC CHECKSUMS:
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
+  ProgressHUD: e603e8b8622c47d8818b9fb38b3cfe9d3e7ca421
+
+PODFILE CHECKSUM: cc0cd3827968bca87bd3388ea50f5fb9c06e7b10
+
+COCOAPODS: 1.11.2
