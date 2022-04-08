@@ -7,7 +7,9 @@
 
 import UIKit
 import ProgressHUD
+
 class EventVC: UIViewController {
+    
     
     @IBOutlet weak var collectionView:UICollectionView!
     
@@ -19,22 +21,42 @@ class EventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "suit.heart"), style: .plain, target: self, action: #selector(favoriteButtonClicked(sender:)))
+        
         configureCollectionView()
+    
         getUpComingEvents(leagueID: self.league.idLeague ?? "1234", round: "28")
         getLatestEvents(leagueID: self.league.idLeague ?? "1234", round: "25")
         getTeams()
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureFavoriteIcon()
+    }
+    
+    private func configureFavoriteIcon(){
+        isFavorite = CoreDataManager.shared.isInFavorites(leagueID: self.league.idLeague!)
+        
+        let favoriteBarButtonItem = UIBarButtonItem(image: UIImage(systemName: isFavorite ? "suit.heart.fill": "suit.heart"), style: .plain, target: self, action: #selector(favoriteButtonClicked(sender:)))
+        favoriteBarButtonItem.tintColor = .red
+        
+        navigationItem.rightBarButtonItem = favoriteBarButtonItem
+    }
+    
     
     @objc func favoriteButtonClicked(sender:UIBarButtonItem){
         isFavorite.toggle()
         let imageName = isFavorite ? "suit.heart.fill" : "suit.heart"
         sender.image = UIImage(systemName: imageName)
-        sender.tintColor = .red
-        CoreDataManager.shared.saveData(leauge: league)
-        ProgressHUD.showSuccess("League saved to favorites successfully")
+        if isFavorite{
+            CoreDataManager.shared.addToFavorites(league: self.league)
+            ProgressHUD.showSuccess("League saved to favorites successfully")
+        }else{
+            CoreDataManager.shared.removeFromFavorites(leagueID: self.league.idLeague!)
+            ProgressHUD.showSuccess("League is removed from favorites successfully")
+        }
+        
     }
     
     
