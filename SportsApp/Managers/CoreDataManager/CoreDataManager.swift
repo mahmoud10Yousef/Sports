@@ -10,79 +10,97 @@ import Foundation
 
 
 
-import Foundation
+import UIKit
 import CoreData
 
 class CoreDataManager{
     
+    
     static let shared = CoreDataManager()
+    private var managedContext: NSManagedObjectContext?
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "SportsApp")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
+    
+    private init(){
+        guard let appDelegate =  UIApplication.shared.delegate as? AppDelegate else { return }
+        managedContext = appDelegate.persistentContainer.viewContext
     }
     
-
-    func fetchData()->[NSManagedObject]{
-        let managedObjectContext = persistentContainer.viewContext
-        let fetchRequest         = NSFetchRequest<NSManagedObject>(entityName: "FavouriteLeagues")
-        let arr = try! managedObjectContext.fetch(fetchRequest)
-        print(arr.count)
-        return arr
-    }
-
     
-    func saveData(leauge: League){
-        let managedObjectContext = persistentContainer.viewContext
-        let entity       = NSEntityDescription.entity(forEntityName: "FavouriteLeagues", in: managedObjectContext)!
-        let league       = NSManagedObject(entity: entity, insertInto: managedObjectContext)
-
-        league.setValue(leauge.idLeague, forKey: "leagueId")
-        league.setValue(leauge.strLeague, forKey: "leagueName")
-        league.setValue(leauge.strYoutube, forKey: "youtubePath")
-        league.setValue(leauge .strBadge, forKey: "imgPath")
+    func addToFavorites(league:League){
         
-        print("new LeaugesEntity saved")
+        let favoriteEntity = NSEntityDescription.entity(forEntityName: "FavouriteLeagues", in: managedContext!)
+        let favLeague = NSManagedObject(entity: favoriteEntity!, insertInto: managedContext!)
+        
+        
+        favLeague.setValue(league.idLeague, forKey: "leagueId")
+        favLeague.setValue(league.strLeague, forKey: "leagueName")
+        favLeague.setValue(league.strYoutube, forKey: "youtubePath")
+        favLeague.setValue(league.strBadge, forKey: "imgPath")
         do{
-            try managedObjectContext.save()
-            
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            try managedContext?.save()
+            print("league is save successfully")
+        }catch{
+            print("error while saving league locally")
         }
-
-    }
-    
-    
-    func deleteData(leauge: League){
-        let managedObjectContext = persistentContainer.viewContext
-
-        let entity       = NSEntityDescription.entity(forEntityName: "FavouriteLeagues", in: managedObjectContext)!
-        let league       = NSManagedObject(entity: entity, insertInto: managedObjectContext)
         
-        league.setValue(leauge.idLeague, forKey: "leagueId")
-        league.setValue(leauge.strLeague, forKey: "leagueName")
-        league.setValue(leauge.strYoutube, forKey: "youtubePath")
-        league.setValue(leauge.strBadge, forKey: "imgPath")
-        managedObjectContext.delete(league)
-        saveContext()
     }
+    
+    
+    func isInFavorites(leagueID:String)->Bool{
+        var results = [NSManagedObject]()
+        
+        let fetchReaquest = NSFetchRequest<NSFetchRequestResult>(entityName: "FavouriteLeagues")
+        fetchReaquest.predicate = NSPredicate(format: "leagueId == %@", leagueID)
+        
+        do{
+            results = try managedContext?.fetch(fetchReaquest) as! [NSManagedObject]
+           print("league is in favorites")
+        }catch{
+            print("error while checking")
+        }
+        
+        return results.count > 0
+    }
+    
+    
+    func removeFromFavorites(leagueID:String){
+        let fetchReaquest = NSFetchRequest<NSFetchRequestResult>(entityName: "FavouriteLeagues")
+        fetchReaquest.predicate = NSPredicate(format: "leagueId == %@", leagueID)
+        
+        do{
+            let objectToDelete = try managedContext?.fetch(fetchReaquest).first as! NSManagedObject
+            managedContext?.delete(objectToDelete)
+            try managedContext?.save()
+           print("delete league successfully")
+        }catch{
+            print("error while deleteing")
+        }
+    }
+    
+    
+    func retriveFavorites() -> [League]{
+        var favorites = [League]()
+        
+        let fetchReaquest = NSFetchRequest<NSFetchRequestResult>(entityName: "FavouriteLeagues")
+        do{
+            let results = try managedContext?.fetch(fetchReaquest) as! [NSManagedObject]
+            
+            for favorite in results{
+                let leagueID    = favorite.value(forKey: "leagueId") as! String
+                let strLeague   = favorite.value(forKey: "leagueName") as! String
+                let youtubePath = favorite.value(forKey: "youtubePath") as! String
+                let imagePath   = favorite.value(forKey: "imgPath") as! String
+                let favLeague = League(strLeague: strLeague , idLeague: leagueID , strBadge: imagePath, strYoutube: youtubePath)
+                favorites.append(favLeague)
+                
+            }
+            try managedContext?.save()
+           print("fetch leagues successfully")
+        }catch{
+            print("error while fetching leagues")
+        }
+        return favorites
+    }
+    
     
 }
